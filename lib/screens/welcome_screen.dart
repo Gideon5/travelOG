@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_log/screens/home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -52,7 +53,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: height * 0.02,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                    },
                     child: Container(
                       height: height * 0.065,
                       width: width * 0.75,
@@ -72,12 +76,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                   ),
                   SizedBox(height: height * 0.02),
-                  Text("Don't have an account", style: TextStyle(
-                    fontSize: width * 0.04,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white
-                  ),),
-                  SizedBox(height: height * 0.02,),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Don't have an account",
+                      style: TextStyle(
+                          fontSize: width * 0.04,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
                 ],
               ),
             ),
